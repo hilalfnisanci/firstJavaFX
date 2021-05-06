@@ -1,7 +1,10 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -10,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
@@ -70,7 +74,8 @@ public class LoginController implements Initializable {
 
             while (queryResult.next()){
                 if(queryResult.getInt(1)==1){
-                    loginMessageLabel.setText("Congratulations!");
+                    //loginMessageLabel.setText("Congratulations!");
+                    createAccountField();
                 }else{
                     loginMessageLabel.setText("Invalid login. Please try again.");
                 }
@@ -81,5 +86,20 @@ public class LoginController implements Initializable {
             e.getCause();
         }
 
+    }
+
+    public void createAccountField(){
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+            Stage registerStage = new Stage();
+            registerStage.initStyle(StageStyle.UNDECORATED);
+            registerStage.setScene(new Scene(root, 520, 502));
+            registerStage.show();
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }
