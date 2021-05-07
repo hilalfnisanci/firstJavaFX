@@ -10,53 +10,60 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="720.0" style="-fx-background-color: #808080;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
    <left>
-      <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="brandingImageView" fitHeight="400.0" fitWidth="228.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="brandingImageView" fitHeight="484.0" fitWidth="327.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/logo.jpg" />
+                  <Image url="@../../images/logo.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="294.0" style="-fx-background-color: #ECECE7;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="420.0" prefWidth="396.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="lockImageView" fitHeight="32.0" fitWidth="46.0" layoutX="134.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="iconImageView" fitHeight="54.0" fitWidth="51.0" layoutX="172.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/lock.png" />
+                  <Image url="@../../images/loginIcon.png" />
                </image>
             </ImageView>
-            <Label layoutX="20.0" layoutY="151.0" style="-fx-background-color: #ECECE7;" text="Username">
+            <TextField fx:id="usernameTextField" layoutX="95.0" layoutY="116.0" prefHeight="25.0" prefWidth="206.0" promptText="Username" />
+            <PasswordField fx:id="enterPasswordField" layoutX="95.0" layoutY="151.0" prefHeight="25.0" prefWidth="206.0" promptText="Password" />
+            <Button fx:id="cancelButton" layoutX="118.0" layoutY="270.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="22.0" prefWidth="164.0" style="-fx-background-color: #169b29;" text="Cancel" textFill="#d0bebe">
                <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="usernameTextField" layoutX="85.0" layoutY="147.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" />
-            <Label layoutX="21.0" layoutY="205.0" style="-fx-background-color: #ECECE7;" text="Password">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="enterPasswordField" layoutX="85.0" layoutY="201.0" prefHeight="26.0" prefWidth="173.0" promptText="Password" />
-            <Button fx:id="loginButton" layoutX="24.0" layoutY="276.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="32.0" prefWidth="249.0" style="-fx-background-color: #00b140;" text="Login">
-               <font>
-                  <Font size="13.0" />
+                  <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="24.0" layoutY="325.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="32.0" prefWidth="249.0" style="-fx-background-color: #00b140;" text="Cancel">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="15.0" layoutY="242.0" prefHeight="19.0" prefWidth="267.0" style="-fx-background-color: #ECECE7;" textFill="#169a12">
+            <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="74.0" layoutY="89.0" prefHeight="19.0" prefWidth="247.0" style="-fx-background-color: #808080;" textFill="#cd4716">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+            <Button fx:id="loginButton" layoutX="118.0" layoutY="231.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="30.0" prefWidth="164.0" style="-fx-background-color: #169b29;" text="Login" textFill="#d0bebe">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="userImageView" fitHeight="40.0" fitWidth="29.0" layoutX="53.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="passwordImageView" fitHeight="40.0" fitWidth="29.0" layoutX="53.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/password.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="120.0" layoutY="334.0" text="---------------OR---------------" />
+            <Button fx:id="signUpButton" layoutX="96.0" layoutY="183.0" mnemonicParsing="false" onAction="#signUpButtonAction" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #808080;" text="Hesabın yok mu? Kayıt ol!" />
+            <Button fx:id="loginAdminButton" layoutX="44.0" layoutY="361.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="30.0" prefWidth="308.0" style="-fx-background-color: #169b29;" text="Login Admin" textFill="#d0bebe">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </right>

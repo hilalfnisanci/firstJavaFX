@@ -31,30 +31,52 @@ public class LoginController implements Initializable {
     @FXML
     private ImageView brandingImageView;
     @FXML
-    private ImageView lockImageView;
+    private ImageView iconImageView;
     @FXML
     private TextField usernameTextField;
     @FXML
     private PasswordField enterPasswordField;
+    @FXML
+    private ImageView userImageView;
+    @FXML
+    private ImageView passwordImageView;
+    @FXML
+    private Button signUpButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        File brandingFile = new File("images/logo.jpg");
+        File brandingFile = new File("images/logo.png");
         Image brandingImage = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(brandingImage);
 
-        File lockFile = new File("images/lock.png");
-        Image lockImage = new Image(lockFile.toURI().toString());
-        lockImageView.setImage(lockImage);
+        File iconFile = new File("images/loginIcon.png");
+        Image iconImage = new Image(iconFile.toURI().toString());
+        iconImageView.setImage(iconImage);
+
+        File userFile = new File("images/user.png");
+        Image userImage = new Image(userFile.toURI().toString());
+        userImageView.setImage(userImage);
+
+        File passwordFile = new File("images/password.png");
+        Image passwordImage = new Image(passwordFile.toURI().toString());
+        passwordImageView.setImage(passwordImage);
+
     }
 
     public void loginButtonOnAction(ActionEvent event){
 
         if(!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()){
-            validateLogin();
+            //validateLogin();
+            loginMessageLabel.setText("Congratulations!");
         }else{
-            loginMessageLabel.setText("Please enter username and password");
+            loginMessageLabel.setText("Please enter username and password!");
         }
+    }
+
+    public void signUpButtonAction(ActionEvent event){
+        Stage stage = (Stage) signUpButton.getScene().getWindow();
+        stage.close();
+        createAccountField();
     }
 
     public void cancelButtonOnAction(ActionEvent event){
@@ -74,10 +96,9 @@ public class LoginController implements Initializable {
 
             while (queryResult.next()){
                 if(queryResult.getInt(1)==1){
-                    //loginMessageLabel.setText("Congratulations!");
                     createAccountField();
                 }else{
-                    loginMessageLabel.setText("Invalid login. Please try again.");
+                    loginMessageLabel.setText("Invalid login. Please try again!!");
                 }
             }
 
@@ -102,4 +123,6 @@ public class LoginController implements Initializable {
             e.getCause();
         }
     }
+
+
 }
