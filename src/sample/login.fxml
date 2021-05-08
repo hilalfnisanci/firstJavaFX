@@ -58,8 +58,8 @@
                </image>
             </ImageView>
             <Label layoutX="120.0" layoutY="334.0" text="---------------OR---------------" />
-            <Button fx:id="signUpButton" layoutX="96.0" layoutY="183.0" mnemonicParsing="false" onAction="#signUpButtonAction" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #808080;" text="Hesabın yok mu? Kayıt ol!" />
-            <Button fx:id="loginAdminButton" layoutX="44.0" layoutY="361.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="30.0" prefWidth="308.0" style="-fx-background-color: #169b29;" text="Login Admin" textFill="#d0bebe">
+            <Button fx:id="signUpButton" layoutX="96.0" layoutY="183.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #808080;" text="Hesabın yok mu? Kayıt ol!" />
+            <Button fx:id="loginAdminButton" layoutX="44.0" layoutY="361.0" mnemonicParsing="false" onAction="#loginAdminButtonOnAction" prefHeight="30.0" prefWidth="308.0" style="-fx-background-color: #169b29;" text="Login Admin" textFill="#d0bebe">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

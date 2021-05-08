@@ -13,12 +13,12 @@
    <children>
       <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #169b29;">
          <children>
-            <Label layoutX="112.0" layoutY="23.0" prefHeight="37.0" prefWidth="238.0" style="-fx-background-color: #169b29;" text="User Registration" textFill="WHITE">
+            <Label layoutX="141.0" layoutY="23.0" prefHeight="37.0" prefWidth="238.0" style="-fx-background-color: #169b29;" text="User Registration" textFill="#d0bebe">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="shieldImageView" fitHeight="73.0" fitWidth="59.0" layoutX="34.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="shieldImageView" fitHeight="73.0" fitWidth="59.0" layoutX="64.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/shield.png" />
                </image>
@@ -33,12 +33,12 @@
       <TextField fx:id="usernameTextField" layoutX="136.0" layoutY="235.0" prefHeight="25.0" prefWidth="273.0" promptText="Username" />
       <Label layoutX="139.0" layoutY="266.0" prefHeight="17.0" prefWidth="69.0" text="Password" />
       <Label layoutX="136.0" layoutY="318.0" prefHeight="17.0" prefWidth="108.0" text="Confirm Password" />
-      <Button fx:id="registerButton" layoutX="136.0" layoutY="388.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="25.0" prefWidth="273.0" style="-fx-background-color: #169b29;" text="Register" textFill="WHITE">
+      <Button fx:id="registerButton" layoutX="136.0" layoutY="388.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="25.0" prefWidth="273.0" style="-fx-background-color: #169b29;" text="Register" textFill="#d0bebe">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="closeButton" layoutX="136.0" layoutY="427.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="25.0" prefWidth="273.0" style="-fx-background-color: #169b29;" text="Close" textFill="WHITE">
+      <Button fx:id="closeButton" layoutX="136.0" layoutY="427.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="25.0" prefWidth="273.0" style="-fx-background-color: #169b29;" text="Close" textFill="#d0bebe">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
