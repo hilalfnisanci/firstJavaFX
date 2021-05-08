@@ -47,7 +47,7 @@
       <PasswordField fx:id="confirmPasswordField" layoutX="136.0" layoutY="338.0" prefHeight="25.0" prefWidth="273.0" promptText="Confirm Password" />
       <Label fx:id="registrationMessageLabel" alignment="CENTER" layoutX="51.0" layoutY="90.0" prefHeight="25.0" prefWidth="399.0" textFill="#2b5739">
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
       <Label fx:id="confirmPasswordLabel" alignment="CENTER" layoutX="227.0" layoutY="322.0" prefHeight="25.0" prefWidth="158.0" textFill="RED" />

@@ -64,14 +64,20 @@ public class RegisterController implements Initializable {
 
     @FXML
     public void registerButtonOnAction(ActionEvent event){
-        if(setPasswordField.getText().equals(confirmPasswordField.getText())){
-            registerUser();
-            confirmPasswordLabel.setText("");
 
+        if(!firstnameTextField.getText().isEmpty() && !lastnameTextField.getText().isEmpty() && !usernameTextField.getText().isEmpty() && !setPasswordField.getText().isEmpty()){
+            if(setPasswordField.getText().equals(confirmPasswordField.getText())){
+                registerUser();
+                confirmPasswordLabel.setText("");
+
+            }else{
+                registrationMessageLabel.setText("");
+                confirmPasswordLabel.setText("Password does not match!");
+            }
         }else{
-            registrationMessageLabel.setText("");
-            confirmPasswordLabel.setText("Password does not match!");
+            registrationMessageLabel.setText("Please fill in all information! ");
         }
+
     }
 
     @FXML
