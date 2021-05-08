@@ -50,6 +50,9 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="confirmPasswordLabel" alignment="CENTER" layoutX="227.0" layoutY="322.0" prefHeight="25.0" prefWidth="158.0" textFill="RED" />
+      <Label fx:id="confirmPasswordLabel" layoutX="238.0" layoutY="314.0" prefHeight="25.0" prefWidth="238.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
    </children>
 </AnchorPane>
