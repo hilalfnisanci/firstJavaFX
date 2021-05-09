@@ -103,7 +103,7 @@ public class LoginController implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() +"'";
+        String verifyLogin = "SELECT count(1) FROM user_accounts WHERE username = '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() +"'";
 
         try {
             Statement statement = connectDB.createStatement();
@@ -145,7 +145,7 @@ public class LoginController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
             Stage registerStage = new Stage();
             registerStage.initStyle(StageStyle.UNDECORATED);
-            registerStage.setScene(new Scene(root, 520, 502));
+            registerStage.setScene(new Scene(root, 520, 546));
             registerStage.show();
 
         }catch (Exception e){

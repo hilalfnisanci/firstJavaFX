@@ -54,6 +54,8 @@ public class RegisterController implements Initializable {
 
     @FXML
     private Label confirmPasswordLabel;
+    @FXML
+    private TextField mailTextField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,7 +67,8 @@ public class RegisterController implements Initializable {
     @FXML
     public void registerButtonOnAction(ActionEvent event){
 
-        if(!firstnameTextField.getText().isEmpty() && !lastnameTextField.getText().isEmpty() && !usernameTextField.getText().isEmpty() && !setPasswordField.getText().isEmpty()){
+        if(!firstnameTextField.getText().isEmpty() && !lastnameTextField.getText().isEmpty() && !usernameTextField.getText().isEmpty() &&
+                !setPasswordField.getText().isEmpty() && !mailTextField.getText().isEmpty()){
             if(setPasswordField.getText().equals(confirmPasswordField.getText())){
                 registerUser();
                 confirmPasswordLabel.setText("");
@@ -105,9 +108,10 @@ public class RegisterController implements Initializable {
         String lastname = lastnameTextField.getText();
         String username = usernameTextField.getText();
         String password = setPasswordField.getText();
+        String mail = mailTextField.getText();
 
-        String insertFields = "INSERT INTO user_account (firstname, lastname, username, password) VALUES('";
-        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "')";
+        String insertFields = "INSERT INTO user_accounts (firstname, lastname, username, password, e-mail) VALUES('";
+        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "','" + mail + "')";
         String insertToRegister = insertFields+insertValues;
 
         try {

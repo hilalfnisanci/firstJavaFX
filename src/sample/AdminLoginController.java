@@ -95,7 +95,7 @@ public class AdminLoginController implements Initializable {
 
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String verifyLogin = "SELECT count(1) FROM admin WHERE username = '" + adminUsernameTextField.getText() + "' AND password ='" + adminPasswordTextField.getText() +"'";
+        String verifyLogin = "SELECT count(1) FROM admin_accounts WHERE username = '" + adminUsernameTextField.getText() + "' AND password ='" + adminPasswordTextField.getText() +"'";
 
         try {
             Statement statement = connectDB.createStatement();

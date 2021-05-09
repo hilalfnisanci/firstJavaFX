@@ -26,20 +26,26 @@
                   <Image url="@../../images/password.png" />
                </image>
             </ImageView>
-            <Button fx:id="adminLoginButton" layoutX="109.0" layoutY="257.0" mnemonicParsing="false" onAction="#adminLoginButtonOnAction" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #169b29;" text="Login" textFill="#d0bebe">
+            <Button fx:id="adminLoginButton" layoutX="109.0" layoutY="223.0" mnemonicParsing="false" onAction="#adminLoginButtonOnAction" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #169b29;" text="Login" textFill="#d0bebe">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="adminCancelButton" layoutX="109.0" layoutY="303.0" mnemonicParsing="false" onAction="#adminCancelButtonOnAction" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #169b29;" text="Cancel" textFill="#d0bebe">
+            <Button fx:id="adminCancelButton" layoutX="109.0" layoutY="269.0" mnemonicParsing="false" onAction="#adminCancelButtonOnAction" prefHeight="31.0" prefWidth="302.0" style="-fx-background-color: #169b29;" text="Cancel" textFill="#d0bebe">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-            <Label fx:id="adminLoginMessageLabel" alignment="CENTER" layoutX="82.0" layoutY="197.0" prefHeight="26.0" prefWidth="357.0" textFill="#ae3a00">
+            <Label fx:id="adminLoginMessageLabel" alignment="CENTER" layoutX="82.0" layoutY="184.0" prefHeight="26.0" prefWidth="357.0" textFill="#ae3a00">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
+            <Button fx:id="adminSignUpButton" layoutX="179.0" layoutY="369.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #169b29;" text="Sign Up" textFill="#d0bebe">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="71.0" layoutY="345.0" prefHeight="17.0" prefWidth="378.0" text="---------------OR---------------" />
          </children>
       </AnchorPane>
    </center>
