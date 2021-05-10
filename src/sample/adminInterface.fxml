@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminInterfaceController">
+   <center>
+      <AnchorPane prefHeight="552.0" prefWidth="881.0" BorderPane.alignment="CENTER">
+         <ImageView fx:id="adminGUIBackgroundImageView" fitHeight="563.0" fitWidth="889.0" layoutX="-2.0" layoutY="3.0"
+                    pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/background.jpg"/>
+         </ImageView>
+         <AnchorPane layoutX="1.0" layoutY="3.0" opacity="0.6" prefHeight="555.0" prefWidth="314.0"
+                     style="-fx-background-color: #808080;"/>
+         <Button fx:id="exitButton" layoutX="715.0" layoutY="55.0" mnemonicParsing="false"
+                 onAction="#exitButtonOnAction" prefHeight="44.0" prefWidth="66.0"
+                 style="-fx-background-color: #9e1d1d;" text="exit" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="13.0"/>
+            </font>
+         </Button>
+      </AnchorPane>
+   </center>
+</BorderPane>

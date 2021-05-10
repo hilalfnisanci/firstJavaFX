@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="546.0" prefWidth="520.0" style="-fx-background-color: #808080;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminRegisterController">
+    <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #169b29;">
+        <Label layoutX="141.0" layoutY="23.0" prefHeight="37.0" prefWidth="238.0" style="-fx-background-color: #169b29;" text="Admin Registration" textFill="#d0bebe">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="shieldImageView" fitHeight="73.0" fitWidth="59.0" layoutX="64.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../images/shield.png" />
+        </ImageView>
+    </AnchorPane>
+    <Label layoutX="23.0" layoutY="126.0" prefHeight="17.0" prefWidth="69.0" text="Firstname" />
+    <TextField fx:id="firstnameTextField" layoutX="20.0" layoutY="146.0" prefHeight="25.0" prefWidth="212.0" promptText="Firstname" />
+    <Label layoutX="271.0" layoutY="124.0" prefHeight="17.0" prefWidth="69.0" text="Lastname" />
+    <TextField fx:id="lastnameTextField" layoutX="271.0" layoutY="146.0" prefHeight="25.0" prefWidth="212.0" promptText="Lastname" />
+    <Label layoutX="23.0" layoutY="184.0" prefHeight="17.0" prefWidth="69.0" text="Username" />
+    <TextField fx:id="usernameTextField" layoutX="21.0" layoutY="201.0" prefHeight="25.0" prefWidth="212.0" promptText="Username" />
+    <Label layoutX="23.0" layoutY="297.0" prefHeight="17.0" prefWidth="69.0" text="Password" />
+    <Label layoutX="23.0" layoutY="356.0" prefHeight="17.0" prefWidth="108.0" text="Confirm Password" />
+    <Button fx:id="adminRegisterButton" layoutX="276.0" layoutY="447.0" mnemonicParsing="false" onAction="#adminRegisterButtonOnAction" prefHeight="30.0" prefWidth="202.0" style="-fx-background-color: #169b29;" text="Register" textFill="#d0bebe">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+    <Button fx:id="cancelButton" layoutX="276.0" layoutY="486.0" mnemonicParsing="false" onAction="#adminCancelButtonOnAction" prefHeight="30.0" prefWidth="202.0" style="-fx-background-color: #169b29;" text="Cancel" textFill="#d0bebe">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+    <PasswordField fx:id="setPasswordField" layoutX="23.0" layoutY="314.0" prefHeight="25.0" prefWidth="212.0" promptText="Password" />
+    <PasswordField fx:id="confirmPasswordField" layoutX="23.0" layoutY="373.0" prefHeight="25.0" prefWidth="212.0" promptText="Confirm Password" />
+    <Label fx:id="registrationMessageLabel" alignment="CENTER" layoutX="61.0" layoutY="91.0" prefHeight="25.0" prefWidth="399.0" textFill="#cd4716">
+        <font>
+            <Font name="System Bold" size="13.0" />
+        </font>
+    </Label>
+    <Label fx:id="confirmPasswordLabel" layoutX="259.0" layoutY="373.0" prefHeight="25.0" prefWidth="238.0" textFill="RED">
+        <font>
+            <Font name="System Bold" size="13.0" />
+        </font>
+    </Label>
+    <Label layoutX="23.0" layoutY="236.0" prefHeight="17.0" prefWidth="69.0" text="Mail Address" />
+    <TextField fx:id="mailTextField" layoutX="20.0" layoutY="253.0" prefHeight="25.0" prefWidth="326.0" promptText="Mail Address" />
+    <TextField fx:id="uniqueCodeTextField" layoutX="48.0" layoutY="458.0" prefHeight="47.0" prefWidth="157.0" promptText="Unique Code" />
+    <Label layoutX="276.0" layoutY="184.0" prefHeight="17.0" prefWidth="59.0" text="Country" />
+    <TextField fx:id="countryTextField" layoutX="272.0" layoutY="201.0" prefHeight="25.0" prefWidth="212.0" promptText="Country" />
+</AnchorPane>

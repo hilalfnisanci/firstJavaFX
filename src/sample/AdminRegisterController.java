@@ -21,7 +21,7 @@ import java.sql.Statement;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class RegisterController implements Initializable {
+public class AdminRegisterController implements Initializable {
 
     @FXML
     private ImageView shieldImageView;
@@ -32,9 +32,9 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField usernameTextField;
     @FXML
-    private Button registerButton;
+    private Button adminRegisterButton;
     @FXML
-    private Button closeButton;
+    private Button cancelButton;
     @FXML
     private PasswordField setPasswordField;
     @FXML
@@ -46,6 +46,8 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField mailTextField;
     @FXML
+    private TextField uniqueCodeTextField;
+    @FXML
     private TextField countryTextField;
 
     @Override
@@ -55,28 +57,11 @@ public class RegisterController implements Initializable {
         shieldImageView.setImage(shieldImage);
     }
 
-    @FXML
-    public void registerButtonOnAction(){
-
-        if(!firstnameTextField.getText().isEmpty() && !lastnameTextField.getText().isEmpty() && !usernameTextField.getText().isEmpty() &&
-                !setPasswordField.getText().isEmpty() && !mailTextField.getText().isEmpty() && !countryTextField.getText().isEmpty()){
-            if(setPasswordField.getText().equals(confirmPasswordField.getText())){
-                registerUser();
-                confirmPasswordLabel.setText("");
-
-            }else{
-                registrationMessageLabel.setText("");
-                confirmPasswordLabel.setText("Password does not match!");
-            }
-        }else{
-            registrationMessageLabel.setText("Please fill in all information! ");
-        }
-
-    }
+    String uniqueCode = "Uniq@123";
 
     @FXML
-    public void closeButtonOnAction(){
-        Stage stage = (Stage) closeButton.getScene().getWindow();
+    void adminCancelButtonOnAction() {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
@@ -91,7 +76,24 @@ public class RegisterController implements Initializable {
         }
     }
 
-    public void registerUser(){
+    @FXML
+    void adminRegisterButtonOnAction() {
+        if(!firstnameTextField.getText().isEmpty() && !lastnameTextField.getText().isEmpty() && !usernameTextField.getText().isEmpty() &&
+                !setPasswordField.getText().isEmpty() && !mailTextField.getText().isEmpty() && !countryTextField.getText().isEmpty() && uniqueCodeTextField.getText().equals(uniqueCode)){
+            if(setPasswordField.getText().equals(confirmPasswordField.getText())){
+                registerAdmin();
+                confirmPasswordLabel.setText("");
+
+            }else{
+                registrationMessageLabel.setText("");
+                confirmPasswordLabel.setText("Password does not match!");
+            }
+        }else{
+            registrationMessageLabel.setText("Please fill in all information! ");
+        }
+    }
+
+    public void registerAdmin(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
@@ -102,8 +104,8 @@ public class RegisterController implements Initializable {
         String mail = mailTextField.getText();
         String country = countryTextField.getText();
 
-        String insertFields = "INSERT INTO user_accounts (firstname, lastname, username, password, mail, country) VALUES('";
-        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "','" + mail + "','" + country + "')";
+        String insertFields = "INSERT INTO admin_accounts (firstname, lastname, username, mail, password, country) VALUES('";
+        String insertValues = firstname + "','" + lastname + "','" + username + "','" + mail + "','" + password + "','" + country + "')";
         String insertToRegister = insertFields+insertValues;
 
         try {
@@ -116,4 +118,5 @@ public class RegisterController implements Initializable {
         }
 
     }
+
 }

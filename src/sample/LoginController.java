@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
 
 import java.io.File;
@@ -21,12 +20,15 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
     @FXML
     private Button cancelButton;
+    @FXML
+    private Button loginButton;
     @FXML
     private Label loginMessageLabel;
     @FXML
@@ -67,7 +69,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    public void loginButtonOnAction(ActionEvent event){
+    public void loginButtonOnAction(){
 
         if(!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()){
             validateLogin();
@@ -78,21 +80,21 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    public void signUpButtonOnAction(ActionEvent event){
+    public void signUpButtonOnAction(){
         Stage stage = (Stage) signUpButton.getScene().getWindow();
         stage.close();
         createAccountField();
     }
 
     @FXML
-    public void cancelButtonOnAction(ActionEvent event){
+    public void cancelButtonOnAction(){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
         Platform.exit();
     }
 
     @FXML
-    void loginAdminButtonOnAction(ActionEvent event) {
+    void loginAdminButtonOnAction() {
         Stage stage = (Stage) loginAdminButton.getScene().getWindow();
         stage.close();
         adminLoginGui();
@@ -111,8 +113,8 @@ public class LoginController implements Initializable {
 
             while (queryResult.next()){
                 if(queryResult.getInt(1)==1){
-                    //userInterface();
-                    loginMessageLabel.setText("Congratulations!");
+                    createUserInterface();
+                    //loginMessageLabel.setText("Congratulations!");
                 }else{
                     loginMessageLabel.setText("Invalid login. Please try again!!");
                 }
@@ -125,9 +127,23 @@ public class LoginController implements Initializable {
 
     }
 
+    public void createUserInterface(){
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("userInterface.fxml")));
+            Stage registerStage = new Stage();
+            registerStage.initStyle(StageStyle.UNDECORATED);
+            registerStage.setScene(new Scene(root, 881, 554));
+            registerStage.show();
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
     public void adminLoginGui(){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("adminLogin.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("adminLogin.fxml")));
             Stage adminStage = new Stage();
             adminStage.initStyle(StageStyle.UNDECORATED);
             adminStage.setScene(new Scene(root, 520, 502));
@@ -142,7 +158,7 @@ public class LoginController implements Initializable {
     public void createAccountField(){
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("register.fxml")));
             Stage registerStage = new Stage();
             registerStage.initStyle(StageStyle.UNDECORATED);
             registerStage.setScene(new Scene(root, 520, 546));
