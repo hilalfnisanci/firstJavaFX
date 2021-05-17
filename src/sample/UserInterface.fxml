@@ -1,28 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserInterfaceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1120.0" style="-fx-background-color: #bcaeae;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserInterfaceController">
+   <right>
+      <AnchorPane opacity="0.9" prefHeight="600.0" prefWidth="206.0" style="-fx-background-color: #3e3e3e;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="viewProfileButton" layoutX="18.0" layoutY="371.0" mnemonicParsing="false" onAction="#viewProfileButtonOnAction" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: #b0b8a6;" text="Profili Görüntüle">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="userNameLabel" layoutX="20.0" layoutY="418.0" prefHeight="19.0" prefWidth="174.0" text="name" textFill="WHITE" />
+            <Label fx:id="userMailLabel" layoutX="19.0" layoutY="446.0" prefHeight="19.0" prefWidth="175.0" text="email" textFill="WHITE" />
+            <Label fx:id="userCountryLabel" layoutX="19.0" layoutY="473.0" prefHeight="19.0" prefWidth="175.0" text="country" textFill="WHITE" />
+            <Label fx:id="subsTypeLabel" layoutX="19.0" layoutY="501.0" prefHeight="19.0" prefWidth="178.0" text="Abonelik Türü: " textFill="WHITE" />
+            <Label fx:id="paymentLabel" layoutX="18.0" layoutY="532.0" prefHeight="19.0" prefWidth="179.0" text="Ödeme Bilgisi: " textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="25.0" layoutY="39.0" prefHeight="34.0" prefWidth="158.0" text="Kullanıcılar" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="exitButton" layoutX="180.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="18.0" prefWidth="22.0" style="-fx-background-color: #940000;" text="X" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </right>
+   <left>
+      <AnchorPane opacity="0.9" prefHeight="600.0" prefWidth="187.0" style="-fx-background-color: #3e3e3e;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="36.0" layoutY="33.0" prefHeight="29.0" prefWidth="117.0" text="Çalma Listeleri" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="popListButton" layoutX="45.0" layoutY="98.0" mnemonicParsing="false" onAction="#popButtonOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: #89e48d;" text="pop">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="jazzListButton" layoutX="45.0" layoutY="144.0" mnemonicParsing="false" onAction="#jazzButtonOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: #89e48d;" text="jazz">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="classicListButton" layoutX="46.0" layoutY="190.0" mnemonicParsing="false" onAction="#classicButtonOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: #89e48d;" text="klasik">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Line endX="92.0" endY="6.0" layoutX="73.0" layoutY="75.0" startX="-48.5" startY="6.0" stroke="WHITE" />
+         </children></AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane opacity="0.9" prefHeight="114.0" prefWidth="1120.0" style="-fx-background-color: #3e3e3e;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="pauseButton" layoutX="538.0" layoutY="34.0" mnemonicParsing="false" onAction="#stopPlayButtonOnAction" prefHeight="42.0" prefWidth="56.0" style="-fx-background-color: #3e3e3e;">
+               <graphic>
+                  <ImageView fx:id="pauseButtonImageView" fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/pause.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="backButton" layoutX="454.0" layoutY="34.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="42.0" prefWidth="56.0" style="-fx-background-color: #3e3e3e;">
+               <graphic>
+                  <ImageView fx:id="backButtonImageView" fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="nextButton" layoutX="610.0" layoutY="34.0" mnemonicParsing="false" onAction="#nextButtonOnAction" prefHeight="42.0" prefWidth="56.0" style="-fx-background-color: #3e3e3e;">
+               <graphic>
+                  <ImageView fx:id="nextButtonImageView" fitHeight="38.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/next.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="musicNameLabel" layoutX="77.0" layoutY="34.0" prefHeight="46.0" prefWidth="192.0" text="music name" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="musicIconImageView" fitHeight="40.0" fitWidth="52.0" layoutX="22.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/music_icon.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </bottom>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <ImageView fx:id="userGUIBackgroundImageView" fitHeight="555.0" fitWidth="887.0" pickOnBounds="true"
-                    preserveRatio="true">
-            <Image url="@../../images/background.jpg"/>
-         </ImageView>
-         <AnchorPane layoutX="2.0" layoutY="1.0" opacity="0.48" prefHeight="554.0" prefWidth="273.0"
-                     style="-fx-background-color: #808080;"/>
-         <Button fx:id="exitButton" layoutX="781.0" layoutY="18.0" mnemonicParsing="false"
-                 onAction="#exitButtonOnAction" prefHeight="50.0" prefWidth="84.0"
-                 style="-fx-background-color: #941010;" text="exit" textFill="WHITE">
-            <font>
-               <Font name="System Bold" size="13.0"/>
-            </font>
-         </Button>
+      <AnchorPane prefHeight="620.0" prefWidth="727.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="backgroundImageView" fitHeight="600.0" fitWidth="727.0" layoutY="-14.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/background.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="playlistLabel" layoutX="41.0" layoutY="20.0" prefHeight="17.0" prefWidth="234.0" text="Çalma Listesi">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="music1Label" layoutX="81.0" layoutY="99.0" text="Müzik 1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="music2Label" layoutX="81.0" layoutY="130.0" text="Müzik 2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="music3Label" layoutX="81.0" layoutY="159.0" text="Müzik 3">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="music4Label" layoutX="81.0" layoutY="193.0" text="Müzik 4">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="music5Label" layoutX="81.0" layoutY="220.0" text="Müzik 5">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="music1Button" alignment="CENTER" layoutX="41.0" layoutY="96.0" mnemonicParsing="false" onAction="#music1ButtonOnAction" prefHeight="7.0" prefWidth="18.0" style="-fx-background-color: #3e3e3e;" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fx:id="icon1" fitHeight="18.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="music2Button" layoutX="41.0" layoutY="127.0" mnemonicParsing="false" onAction="#music2ButtonOnAction" prefHeight="15.0" prefWidth="19.0" style="-fx-background-color: #3e3e3e;">
+               <graphic>
+                  <ImageView fx:id="icon2" fitHeight="18.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="music3Button" layoutX="41.0" layoutY="157.0" mnemonicParsing="false" onAction="#music3ButtonOnAction" prefHeight="15.0" prefWidth="19.0" style="-fx-background-color: #3e3e3e;">
+               <graphic>
+                  <ImageView fx:id="icon3" fitHeight="18.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="music4Button" layoutX="41.0" layoutY="191.0" mnemonicParsing="false" onAction="#music4ButtonOnAction" prefHeight="15.0" prefWidth="19.0" style="-fx-background-color: #3e3e3e;">
+               <graphic>
+                  <ImageView fx:id="icon4" fitHeight="18.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="music5Button" layoutX="41.0" layoutY="218.0" mnemonicParsing="false" onAction="#music5ButtonOnAction" prefHeight="15.0" prefWidth="19.0" style="-fx-background-color: #3e3e3e;">
+               <graphic>
+                  <ImageView fx:id="icon5" fitHeight="18.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/play.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label alignment="CENTER" layoutX="39.0" layoutY="55.0" prefHeight="17.0" prefWidth="118.0" text="Başlık">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="175.0" layoutY="55.0" prefHeight="17.0" prefWidth="118.0" text="Sanatçı">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="303.0" layoutY="55.0" prefHeight="17.0" prefWidth="118.0" text="Albüm">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="438.0" layoutY="55.0" prefHeight="17.0" prefWidth="118.0" text="Tarih Eklendi">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="574.0" layoutY="55.0" prefHeight="17.0" prefWidth="118.0" text="Dinlenme">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="singer1Label" layoutX="210.0" layoutY="99.0" text="Sanatçı 1" />
+            <Label fx:id="singer2Label" layoutX="210.0" layoutY="130.0" text="Sanatçı 2" />
+            <Label fx:id="singer3Label" layoutX="210.0" layoutY="160.0" text="Sanatçı 3" />
+            <Label fx:id="singer4Label" layoutX="210.0" layoutY="194.0" text="Sanatçı 4" />
+            <Label fx:id="singer5Label" layoutX="210.0" layoutY="221.0" text="Sanatçı 5" />
+            <Label fx:id="album1Label" layoutX="339.0" layoutY="99.0" text="Albüm 1" />
+            <Label fx:id="album2Label" layoutX="339.0" layoutY="130.0" text="Albüm 2" />
+            <Label fx:id="album3Label" layoutX="339.0" layoutY="160.0" text="Albüm 3" />
+            <Label fx:id="album4Label" layoutX="341.0" layoutY="193.0" text="Albüm 4" />
+            <Label fx:id="album5Label" layoutX="341.0" layoutY="220.0" text="Albüm 5" />
+            <Label fx:id="date1Label" layoutX="479.0" layoutY="99.0" text="Tarih 1" />
+            <Label fx:id="date2Label" layoutX="479.0" layoutY="130.0" text="Tarih 2" />
+            <Label fx:id="date3Label" layoutX="479.0" layoutY="160.0" text="Tarih 3" />
+            <Label fx:id="date4Label" layoutX="479.0" layoutY="194.0" text="Tarih 4" />
+            <Label fx:id="date5Label" layoutX="479.0" layoutY="221.0" text="Tarih 5" />
+            <Line endX="536.0" layoutX="155.0" layoutY="81.0" startX="-119.0" />
+            <Label fx:id="listener1Label" layoutX="608.0" layoutY="100.0" text="dinlenme" />
+            <Label fx:id="listener2Label" layoutX="608.0" layoutY="131.0" text="dinlenme" />
+            <Label fx:id="listener3Label" layoutX="608.0" layoutY="161.0" text="dinlenme" />
+            <Label fx:id="listener4Label" layoutX="608.0" layoutY="195.0" text="dinlenme" />
+            <Label fx:id="listener5Label" layoutX="608.0" layoutY="222.0" text="dinlenme" />
+         </children>
       </AnchorPane>
    </center>
 </BorderPane>
