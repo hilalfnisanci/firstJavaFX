@@ -48,6 +48,8 @@ public class LoginController implements Initializable {
     @FXML
     private Button loginAdminButton;
 
+    public String userName;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         File brandingFile = new File("images/logo.png");
@@ -105,7 +107,7 @@ public class LoginController implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM user_accounts WHERE username = '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() +"'";
+        String verifyLogin = "SELECT count(1) FROM usertable WHERE username = '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() +"'";
 
         try {
             Statement statement = connectDB.createStatement();
@@ -113,6 +115,7 @@ public class LoginController implements Initializable {
 
             while (queryResult.next()){
                 if(queryResult.getInt(1)==1){
+                    userName = usernameTextField.getText();
                     createUserInterface();
                     //loginMessageLabel.setText("Congratulations!");
                 }else{

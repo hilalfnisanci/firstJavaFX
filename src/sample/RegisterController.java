@@ -102,8 +102,10 @@ public class RegisterController implements Initializable {
         String mail = mailTextField.getText();
         String country = countryTextField.getText();
 
-        String insertFields = "INSERT INTO user_accounts (firstname, lastname, username, password, mail, country) VALUES('";
-        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "','" + mail + "','" + country + "')";
+        int result = Integer.parseInt(country);
+
+        String insertFields = "INSERT INTO usertable (firstname, lastname, username, password, mail, country) VALUES('";
+        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "','" + mail + "','" + result + ")";
         String insertToRegister = insertFields+insertValues;
 
         try {

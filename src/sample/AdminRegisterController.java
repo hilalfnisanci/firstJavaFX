@@ -104,8 +104,10 @@ public class AdminRegisterController implements Initializable {
         String mail = mailTextField.getText();
         String country = countryTextField.getText();
 
-        String insertFields = "INSERT INTO admin_accounts (firstname, lastname, username, mail, password, country) VALUES('";
-        String insertValues = firstname + "','" + lastname + "','" + username + "','" + mail + "','" + password + "','" + country + "')";
+        int result = Integer.parseInt(country);
+
+        String insertFields = "INSERT INTO admintable (firstname, lastname, username, mail, password, countryID) VALUES('";
+        String insertValues = firstname + "','" + lastname + "','" + username + "','" + mail + "','" + password + "'," + result + ")";
         String insertToRegister = insertFields+insertValues;
 
         try {
