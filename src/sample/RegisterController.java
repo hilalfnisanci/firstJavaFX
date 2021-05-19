@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -17,6 +14,7 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -47,6 +45,8 @@ public class RegisterController implements Initializable {
     private TextField mailTextField;
     @FXML
     private TextField countryTextField;
+    @FXML
+    private CheckBox premiumCheckBox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -101,11 +101,12 @@ public class RegisterController implements Initializable {
         String password = setPasswordField.getText();
         String mail = mailTextField.getText();
         String country = countryTextField.getText();
+        boolean isSelected = premiumCheckBox.isSelected();
 
-        int result = Integer.parseInt(country);
+        int result = findCountryID(country);
 
-        String insertFields = "INSERT INTO usertable (firstname, lastname, username, password, mail, country) VALUES('";
-        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "','" + mail + "','" + result + ")";
+        String insertFields = "INSERT INTO usertable (firstname, lastname, username, password, mail, countryID,userTypeID,paidup) VALUES('";
+        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password + "','" + mail + "'," + result +"," + isSelected + ","+ 0 + ")";
         String insertToRegister = insertFields+insertValues;
 
         try {
@@ -117,5 +118,27 @@ public class RegisterController implements Initializable {
             e.getCause();
         }
 
+    }
+
+    public int findCountryID(String countryName){
+
+        int countryID = 0;
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String sql = "select c.countryID from countrytable c where countryName = '" + countryName + "'";
+
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+
+            while (rs.next())
+                countryID = rs.getInt("countryID");
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+        return countryID;
     }
 }

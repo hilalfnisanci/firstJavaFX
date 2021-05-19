@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -20,14 +21,14 @@
          <Image url="@../../images/shield.png" />
       </ImageView>
    </AnchorPane>
-   <Label layoutX="45.0" layoutY="123.0" prefHeight="17.0" prefWidth="69.0" text="Firstname" />
-   <TextField fx:id="firstnameTextField" layoutX="42.0" layoutY="143.0" prefHeight="25.0" prefWidth="212.0" promptText="Firstname" />
-   <Label layoutX="284.0" layoutY="121.0" prefHeight="17.0" prefWidth="69.0" text="Lastname" />
-   <TextField fx:id="lastnameTextField" layoutX="281.0" layoutY="141.0" prefHeight="25.0" prefWidth="212.0" promptText="Lastname" />
-   <Label layoutX="45.0" layoutY="181.0" prefHeight="17.0" prefWidth="69.0" text="Username" />
-   <TextField fx:id="usernameTextField" layoutX="42.0" layoutY="202.0" prefHeight="25.0" prefWidth="212.0" promptText="Username" />
-   <Label layoutX="45.0" layoutY="299.0" prefHeight="17.0" prefWidth="69.0" text="Password" />
-   <Label layoutX="42.0" layoutY="351.0" prefHeight="17.0" prefWidth="108.0" text="Confirm Password" />
+   <Label layoutX="45.0" layoutY="117.0" prefHeight="17.0" prefWidth="69.0" text="Firstname" />
+   <TextField fx:id="firstnameTextField" layoutX="42.0" layoutY="137.0" prefHeight="25.0" prefWidth="212.0" promptText="Firstname" />
+   <Label layoutX="284.0" layoutY="115.0" prefHeight="17.0" prefWidth="69.0" text="Lastname" />
+   <TextField fx:id="lastnameTextField" layoutX="281.0" layoutY="135.0" prefHeight="25.0" prefWidth="212.0" promptText="Lastname" />
+   <Label layoutX="45.0" layoutY="175.0" prefHeight="17.0" prefWidth="69.0" text="Username" />
+   <TextField fx:id="usernameTextField" layoutX="42.0" layoutY="196.0" prefHeight="25.0" prefWidth="212.0" promptText="Username" />
+   <Label layoutX="45.0" layoutY="293.0" prefHeight="17.0" prefWidth="69.0" text="Password" />
+   <Label layoutX="42.0" layoutY="345.0" prefHeight="17.0" prefWidth="108.0" text="Confirm Password" />
    <Button fx:id="registerButton" layoutX="136.0" layoutY="448.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="25.0" prefWidth="273.0" style="-fx-background-color: #169b29;" text="Register" textFill="#d0bebe">
       <font>
          <Font name="System Bold" size="14.0" />
@@ -38,20 +39,21 @@
          <Font name="System Bold" size="14.0" />
       </font>
    </Button>
-   <PasswordField fx:id="setPasswordField" layoutX="42.0" layoutY="319.0" prefHeight="25.0" prefWidth="212.0" promptText="Password" />
-   <PasswordField fx:id="confirmPasswordField" layoutX="42.0" layoutY="371.0" prefHeight="25.0" prefWidth="212.0" promptText="Confirm Password" />
-   <Label fx:id="registrationMessageLabel" alignment="CENTER" layoutX="73.0" layoutY="88.0" prefHeight="25.0" prefWidth="399.0" textFill="#cd4716">
+   <PasswordField fx:id="setPasswordField" layoutX="42.0" layoutY="313.0" prefHeight="25.0" prefWidth="212.0" promptText="Password" />
+   <PasswordField fx:id="confirmPasswordField" layoutX="42.0" layoutY="365.0" prefHeight="25.0" prefWidth="212.0" promptText="Confirm Password" />
+   <Label fx:id="registrationMessageLabel" alignment="CENTER" layoutX="73.0" layoutY="82.0" prefHeight="25.0" prefWidth="399.0" textFill="#cd4716">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>
    </Label>
-   <Label fx:id="confirmPasswordLabel" layoutX="266.0" layoutY="371.0" prefHeight="25.0" prefWidth="238.0" textFill="RED">
+   <Label fx:id="confirmPasswordLabel" layoutX="266.0" layoutY="365.0" prefHeight="25.0" prefWidth="238.0" textFill="RED">
       <font>
          <Font name="System Bold" size="13.0" />
       </font>
    </Label>
-   <Label layoutX="45.0" layoutY="240.0" prefHeight="17.0" prefWidth="69.0" text="Mail Address" />
-   <TextField fx:id="mailTextField" layoutX="42.0" layoutY="257.0" prefHeight="25.0" prefWidth="326.0" promptText="Mail Address" />
-   <Label layoutX="284.0" layoutY="181.0" prefHeight="17.0" prefWidth="69.0" text="Country" />
-   <TextField fx:id="countryTextField" layoutX="279.0" layoutY="202.0" prefHeight="25.0" prefWidth="212.0" promptText="Country" />
+   <Label layoutX="45.0" layoutY="234.0" prefHeight="17.0" prefWidth="69.0" text="Mail Address" />
+   <TextField fx:id="mailTextField" layoutX="42.0" layoutY="251.0" prefHeight="25.0" prefWidth="326.0" promptText="Mail Address" />
+   <Label layoutX="284.0" layoutY="175.0" prefHeight="17.0" prefWidth="69.0" text="Country" />
+   <TextField fx:id="countryTextField" layoutX="279.0" layoutY="196.0" prefHeight="25.0" prefWidth="212.0" promptText="Country" />
+   <CheckBox fx:id="premiumCheckBox" layoutX="42.0" layoutY="399.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" text="Premium?" />
 </AnchorPane>

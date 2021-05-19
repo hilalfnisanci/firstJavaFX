@@ -20,6 +20,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -50,6 +51,8 @@ public class LoginController implements Initializable {
 
     public String userName;
 
+    public static ArrayList userInfo = new ArrayList<>();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         File brandingFile = new File("images/logo.png");
@@ -75,6 +78,7 @@ public class LoginController implements Initializable {
 
         if(!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()){
             validateLogin();
+            userDataInfo();
             //loginMessageLabel.setText("Congratulations!");
         }else{
             loginMessageLabel.setText("Please enter username and password!");
@@ -101,7 +105,6 @@ public class LoginController implements Initializable {
         stage.close();
         adminLoginGui();
     }
-
 
     public void validateLogin(){
         DatabaseConnection connectNow = new DatabaseConnection();
@@ -173,5 +176,49 @@ public class LoginController implements Initializable {
         }
     }
 
+    public void userDataInfo(){
+        userInfo.clear();
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String sql ="SELECT * FROM usertable WHERE username= '" + usernameTextField.getText() + "'" ;
+
+        try{
+            Statement statement = connectDB.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+
+            while(rs.next()){
+                int userID  = rs.getInt("userID");
+                String username = rs.getString("username");
+                String email = rs.getString("mail");
+                int userTypeID  = rs.getInt("userTypeID");
+                boolean paidUp = rs.getBoolean("paidup");
+
+                String userType;
+                String payment;
+                if(userTypeID == 1)
+                    userType = "Premium";
+                else userType = "Normal";
+
+                if(paidUp)
+                    payment = "Ödendi";
+                else payment = "Ödenmedi";
+
+                userInfo.add(username);
+                userInfo.add(email);
+                userInfo.add(userType);
+                userInfo.add(payment);
+
+            }
+
+            rs.close();
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+
+    }
 
 }

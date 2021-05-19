@@ -1,28 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminInterfaceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1120.0" style="-fx-background-color: #bcaeae;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminInterfaceController">
    <center>
-      <AnchorPane prefHeight="552.0" prefWidth="881.0" BorderPane.alignment="CENTER">
-         <ImageView fx:id="adminGUIBackgroundImageView" fitHeight="563.0" fitWidth="889.0" layoutX="-2.0" layoutY="3.0"
-                    pickOnBounds="true" preserveRatio="true">
-            <Image url="@../../images/background.jpg"/>
-         </ImageView>
-         <AnchorPane layoutX="1.0" layoutY="3.0" opacity="0.6" prefHeight="555.0" prefWidth="314.0"
-                     style="-fx-background-color: #808080;"/>
-         <Button fx:id="exitButton" layoutX="715.0" layoutY="55.0" mnemonicParsing="false"
-                 onAction="#exitButtonOnAction" prefHeight="44.0" prefWidth="66.0"
-                 style="-fx-background-color: #9e1d1d;" text="exit" textFill="WHITE">
-            <font>
-               <Font name="System Bold" size="13.0"/>
-            </font>
-         </Button>
+      <AnchorPane prefHeight="620.0" prefWidth="727.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="adminGUIBackgroundImageView" fitHeight="700.0" fitWidth="1120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/adminBackground.jpg" />
+               </image>
+            </ImageView>
+            <Line endX="169.0" layoutX="155.0" layoutY="81.0" startX="-119.0" />
+            <Button fx:id="exitButton" layoutX="1073.0" layoutY="19.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="18.0" prefWidth="22.0" style="-fx-background-color: #940000;" text="X" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="76.0" layoutY="44.0" prefHeight="17.0" prefWidth="220.0" text="İŞLEMLER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="36.0" layoutY="117.0" prefHeight="20.0" prefWidth="288.0" text="Hangi Veri İçin İşlem Yapmak İstiyorsunuz?">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="albumButton" layoutX="92.0" layoutY="171.0" mnemonicParsing="false" onAction="#albumButtonOnAction" prefHeight="29.0" prefWidth="177.0" text="Albüm" />
+            <Button fx:id="musicButton" layoutX="92.0" layoutY="248.0" mnemonicParsing="false" onAction="#musicButtonOnAction" prefHeight="29.0" prefWidth="177.0" text="Şarkı" />
+            <Button fx:id="singerButton" layoutX="92.0" layoutY="321.0" mnemonicParsing="false" onAction="#singerButtonOnAction" prefHeight="29.0" prefWidth="177.0" text="Sanatçı" />
+            <Label layoutX="37.0" layoutY="404.0" prefHeight="20.0" prefWidth="288.0" text="Hangi İşlemi Yapmak İstiyorsunuz?">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="actionChoiceBox" layoutX="36.0" layoutY="437.0" onMouseClicked="#onMouseClick" prefWidth="150.0" />
+            <TextField fx:id="nameTextField" layoutX="552.0" layoutY="236.0" prefHeight="25.0" prefWidth="154.0" />
+            <Line endX="298.0" endY="441.0" layoutX="165.0" layoutY="91.0" startX="298.0" startY="23.0" />
+            <Label fx:id="nameLabel" layoutX="551.0" layoutY="210.0" prefHeight="19.0" prefWidth="155.0" text="name" textFill="#abbcb3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="name2TextField" layoutX="844.0" layoutY="236.0" prefHeight="25.0" prefWidth="157.0" />
+            <Label fx:id="nameLabel2" layoutX="844.0" layoutY="210.0" prefHeight="19.0" prefWidth="156.0" text="name2" textFill="#abbcb3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="okButton" layoutX="933.0" layoutY="508.0" mnemonicParsing="false" onAction="#okButtonOnAction" text="OK" />
+            <TextField fx:id="typeTextField" layoutX="550.0" layoutY="147.0" />
+            <TextField fx:id="dateTextField" layoutX="844.0" layoutY="147.0" />
+            <Label fx:id="typeLabel" layoutX="552.0" layoutY="128.0" prefHeight="19.0" prefWidth="146.0" text="tür" textFill="#abbcb3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateLabel" layoutX="844.0" layoutY="128.0" prefHeight="19.0" prefWidth="148.0" text="tarih" textFill="#abbcb3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="name3TextField" layoutX="550.0" layoutY="338.0" prefHeight="25.0" prefWidth="158.0" />
+            <Label fx:id="nameLabel3" layoutX="551.0" layoutY="314.0" prefHeight="19.0" prefWidth="157.0" text="name3" textFill="#abbcb3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="timeTextField" layoutX="844.0" layoutY="338.0" prefHeight="25.0" prefWidth="158.0" />
+            <Label fx:id="timeLabel" layoutX="844.0" layoutY="314.0" prefHeight="19.0" prefWidth="158.0" text="time" textFill="#abbcb3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
       </AnchorPane>
    </center>
 </BorderPane>
